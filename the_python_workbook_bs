@@ -1,0 +1,170 @@
+
+# compute the area of a room
+# read the input values from the user
+
+length = float(input("Enter the length of the room in feet: "))
+width = float(input("Enter the width of th room in feet: "))
+
+# compute area of room
+area = length * width
+
+# display result 
+print("The room area is", area, "square feet")
+
+#4 compute the area of a field in acres
+SQFT_PER_ACRE = 43560
+
+# read input from user
+length = float(input("Enter the length of the field in feet: "))
+width = float(input("Enter the width of the field in feet: "))
+
+# compute teh areas in acres
+acres = length * width / SQFT_PER_ACRE
+
+print("The area of the field is", acres, "acres")
+
+# 5 Bottle Deposits 
+# compute the refund amount for a collection of bottles
+less_deposit = 0.10
+more_deposit = 0.25
+
+less = int(input("How many containers 1 litre or less do you have? "))
+more = int(input("How many containers more than 1 litre do you have? "))
+
+# compute refund 
+refund = less * less_deposit + more * more_deposit
+# substitue in refund amount with % and have 2 decimal points
+print("Your total refund will be $%.2f." % refund)
+
+# 6 Tax and Tip
+# compute tip for restuarnt meal
+tax_rate = 0.05
+tip_rate = 0.15
+
+cost = float(input("Enter the cost of the meal: "))
+
+# compute tax
+tax = cost * tax_rate
+tip = cost * tip_rate
+total = cost + tax + tip
+
+# display result 
+print("The tax is %.2f and the tip is %.2r making the total %.2f" % \
+     (tax, tip, total))
+
+# 7 Sum of first n positive integers
+# calculate the sum of the first n positive numbers 
+
+n = int(input("Enter a positive integer: "))
+
+# compute the sum
+sm = n * (n + 1) / 2
+
+print("The sum of the first", n, "positive integers is", sm)
+
+# 8 Artitmetic
+
+# Demonstrate Python's mathematical operators and its math module
+
+from math import log10
+
+a = int(input("Enter the vlaue of a: "))
+b = int(input("Enter the value of b: "))
+
+# compute and display the sum, difference, product, quotient and remainder
+print(a, "+", b, "is", a + b)
+print(a, "-", b, "is", a - b)
+print(a, "*", b, "is", a * b)
+print(a, "/", b, "is", a / b)
+print(a, "%", b, "is", a % b)
+
+# compute the logarithm and the power
+print("The base 10 logarithm of", a, "is", log10(a))
+print(a, "^", b, "is", a**b)
+
+# 13 Making Change
+cents_per_toonie = 200
+cents_per_loonie = 100
+cents_per_quarter = 25
+cents_per_dime = 10
+cents_per_nickel = 5
+
+# read number of cents from user
+cents = int(input("Enter the number of cents: "))
+# perform integer division that discards the fractional part by using //
+print(" ", cents // cents_per_toonie, "toonies")
+# compute the amount of change still needed
+cents = cents % cents_per_toonie
+
+print(" ", cents // cents_per_loonie, "loonie" )
+cents = cents % cents_per_loonie
+
+print(" ", cents // cents_per_quarter, "quarter")
+cents = cents % cents_per_quarter
+
+print(" ", cents // cents_per_dime, "dime")
+cents = cents % cents_per_dime
+
+print(" ", cents // cents_per_nickel, "nickel")
+cents = cents % cents_per_nickel
+
+
+# display number of pennies (i.e. the remainder)
+print(" ", cents, "pennies")
+
+# 14 height units
+# convert height in feet and inches to centimeters
+
+in_per_ft = 12
+cm_per_in = 2.54
+
+print("Enter you height:")
+feet = int(input(" Number of feet: "))
+inches = float(input(" Number of inches: "))
+
+# compute number of cm. get inches first then multiply by cm per in
+cm = (feet * in_per_ft + inches) * cm_per_in
+
+print("Your height in centimeters is: ", cm)
+
+
+# heat capacity 17
+# compute the amount of energy needed to heat a volume of water, and its cost
+
+# define constants for specific heat capacity and price of electricity 
+water_heat_capacity = 4.186
+electricity_price = 8.9
+# exponent below 2.777*10^-7
+j_to_kwh = 2.777e-7
+
+# read the volume from the user
+volume = float(input("Enter the amount of water in millimeters: "))
+d_temp = float(input("Enter the temperature increase (degrees Celcius): "))
+
+# compute energy in joules
+q = volume * d_temp * water_heat_capacity
+print("That will require %d Joules of energy." % q)
+kwh = q * j_to_kwh
+cost = kwh * electricity_price
+
+print("That much energy will cost %.2f cents." % cost)
+
+# compute the speed of an object when it hits the ground after being dropped
+from math import sqrt
+
+# define a constant for the acceleration due to gravity in m/s**2
+gravity = 9.8
+
+# get height 
+d = float(input("Height from which the object is dropped (in meters): "))
+
+# compute final velocity 
+vf = sqrt( 2 * gravity * d )
+
+# note, the v^2i term has not been included in the calcualtion bcause vi is 0
+
+print("It will hit the ground at %.2f m/s." % vf)
+
+
+
+
