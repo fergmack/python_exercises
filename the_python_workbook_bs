@@ -1,4 +1,13 @@
 
+# Display a person's complete mailing address
+
+print("Ben Stephenson")
+print("Department of Computer Science")
+print("University of Calgary")
+print("2500 University Drive NW")
+print("Calgary, Alberta T2N 1N$")
+print("Canada")
+
 # compute the area of a room
 # read the input values from the user
 
@@ -166,5 +175,31 @@ vf = sqrt( 2 * gravity * d )
 print("It will hit the ground at %.2f m/s." % vf)
 
 
+
+# area of regular polygon 
+# comupte area of a regular plygon 
+from math import tan, pi
+
+s = float(input("Enter the length of each side of the polygon: "))
+ # cast as int becuase a polygon can't have a fractional no. of sides
+n = int(input("Enter the number of sides: "))
+
+# compute area of polygon
+area = (n * s ** 2) / (4 * tan (pi / n))
+print ("The area of the polygon is", area)
+
+# convert a number of seconds to days, hours, minutes, and seconds
+seconds_per_day = 86400
+seconds_per_hour = 3600
+seconds_per_minute = 60
+
+seconds = int(input("Enter a number of seconds: "))
+
+# compute days, hours, minutes, and seconds
+days = seconds / seconds_per_day
+seconds = seconds % seconds_per_day
+# LEFT OFF
+
+print(" days and SECONDS ", "%d: %02d" %(days, seconds))
 
 
