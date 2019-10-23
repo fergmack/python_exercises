@@ -201,5 +201,3 @@ seconds = seconds % seconds_per_day
 # LEFT OFF
 
 print(" days and SECONDS ", "%d: %02d" %(days, seconds))
-
-
